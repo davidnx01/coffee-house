@@ -1,0 +1,493 @@
+<!doctype html><html lang="sk"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Coffee House · kaviareň v Topoľčanoch — neoficiálny návrh</title>
+<meta name="description" content="Neoficiálny návrh webu pre kaviareň Coffee House, Petra Jilemnického 97, Topoľčany.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --espresso:#2A1912; --espresso-2:#1E120C; --roast:#5B3926;
+  --crema:#C8925B; --crema-lt:#E4C59E;
+  --milk:#FBF9F5; --paper:#FFFDF9; --foam:#F3ECE2;
+  --leaf:#A9C97A; --leaf-dk:#4F7526;
+  --ink:#2A1912; --ink-2:#6A5547;
+  --line:rgba(42,25,18,.15); --line-d:rgba(251,249,245,.16);
+  --serif:"Bodoni Moda",Didot,"Times New Roman",serif;
+  --sans:"Mulish",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:40px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--espresso);color:var(--ink);font:400 17px/1.6 var(--sans)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+ul,ol{list-style:none}
+:focus-visible{outline:2px solid var(--leaf);outline-offset:3px}
+.wrap{max-width:calc(1120px + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+.kick{font:700 11.5px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.tab{font-variant-numeric:tabular-nums lining-nums}
+.u{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .2s}
+.u:hover{background-size:100% 1px}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:999px;background:var(--leaf);color:var(--espresso);font:700 15px/1 var(--sans);letter-spacing:.01em;text-decoration:none;transition:background-color .2s}
+.pill:hover{background:var(--paper)}
+.pill-dark{background:var(--espresso);color:var(--milk)}
+.pill-dark:hover{background:var(--roast)}
+
+.notice{background:var(--espresso-2);color:var(--crema-lt);font:400 13px/1.5 var(--sans);padding:9px 0}
+.notice strong{color:var(--milk);font-weight:700}
+
+/* hlavička */
+.top{background:var(--espresso);color:var(--milk);border-bottom:1px solid var(--line-d)}
+.top .wrap{display:flex;align-items:center;gap:30px;min-height:78px}
+.mark{text-decoration:none;display:flex;align-items:baseline;gap:12px;padding:8px 0}
+.mark b{font:400 28px/1 var(--serif);letter-spacing:-.01em}
+.mark b i{font-style:italic}
+.mark small{font:700 10.5px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--crema-lt)}
+.nav{margin-left:auto;display:flex;gap:26px}
+.nav a{font:700 12px var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:14px 0;color:var(--crema-lt)}
+.nav a:hover{color:var(--milk)}
+.top-tel{font:600 15px var(--sans);padding:12px 0}
+
+/* hero: stôl zhora, podložka a šálka */
+.hero{background:radial-gradient(120% 90% at 28% 45%,#3B241A 0%,var(--espresso) 55%,#231510 100%);color:var(--milk);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);gap:64px;align-items:center;min-height:min(600px,82vh);padding-top:48px;padding-bottom:56px}
+.coaster{margin:0;position:relative}
+.coaster svg{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 26px rgba(0,0,0,.38))}
+.hero h1{font:400 clamp(64px,8.6vw,112px)/.9 var(--serif);letter-spacing:-.02em;margin:18px 0 26px}
+.hero h1 i{display:block;padding-left:.5em}
+.hero .kick{color:var(--crema-lt)}
+.quote{font:400 italic 24px/1.4 var(--serif);color:var(--milk);max-width:20em;quotes:"„" "“"}
+.status{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:28px;padding:14px 0;border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);font:400 15px/1.4 var(--sans)}
+#statusDot{width:10px;height:10px;border-radius:50%;background:var(--crema-lt);box-shadow:0 0 0 4px rgba(251,249,245,.08)}
+#statusDot.is-open{background:var(--leaf);box-shadow:0 0 0 4px rgba(169,201,122,.2)}
+#statusDot.is-closing{background:var(--crema)}
+#statusDot.is-closed{background:#B7A496}
+#statusText b{font-weight:700}
+#todayLabel{color:var(--crema-lt)}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:28px}
+.cta .pill{min-height:56px;padding:0 34px;font-size:16px}
+.cta .tel{font:600 16px var(--sans);padding:12px 0}
+.note{font:400 13.5px/1.5 var(--sans);color:var(--crema-lt);margin-top:12px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:30px;font:400 14px/1.4 var(--sans);color:var(--crema-lt)}
+.trust b{color:var(--milk);font-weight:700}
+
+/* money block: podložka s cenami */
+.menu{background:var(--crema);padding:88px 0 96px}
+.mat{background:var(--paper);padding:52px 56px 44px;outline:1px solid var(--ink);outline-offset:-14px;position:relative}
+.mat-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:32px;align-items:end;padding-bottom:28px;border-bottom:1px solid var(--ink)}
+.mat-head h2{font:400 clamp(44px,5.6vw,76px)/.95 var(--serif);letter-spacing:-.02em;margin-top:10px}
+.mat-head h2 i{font-style:italic}
+.mat-head p{font-size:15px;color:var(--ink-2)}
+.mat .kick{color:var(--ink-2)}
+.row-label{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 0 0;font:700 11.5px/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.row-label em{font:400 italic 15px var(--serif);letter-spacing:0;text-transform:none;color:var(--ink)}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cell{display:flex;flex-direction:column;align-items:flex-start;padding:26px 28px 30px 0;border-bottom:1px solid var(--line)}
+.cell+.cell{padding-left:28px;border-left:1px solid var(--line)}
+.ring{width:112px;height:112px;border-radius:50%;border:1.5px solid var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:inset 0 0 0 5px var(--paper),inset 0 0 0 6px var(--line)}
+.ring b{font:700 30px/1 var(--sans);font-variant-numeric:tabular-nums lining-nums;letter-spacing:-.01em}
+.ring span{font:600 12px var(--sans);letter-spacing:.12em;margin-top:4px;color:var(--ink-2)}
+.cell h3{font:400 28px/1.1 var(--serif);letter-spacing:-.01em}
+.cell h3 i{font-style:italic}
+.cell p{font-size:14.5px;line-height:1.5;color:var(--ink-2);margin-top:8px;max-width:20em}
+.cell q{quotes:"„" "“"}
+.mock .ring{border-style:dashed;border-color:rgba(42,25,18,.45);box-shadow:none}
+.mock .ring b{font-weight:400;color:var(--ink-2)}
+.mock-tag{display:inline-block;font:700 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--ink);border-radius:999px;padding:6px 10px 5px}
+.mat-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;padding-top:26px;font-size:14px;color:var(--ink-2)}
+
+/* kaviareň */
+.cafe{background:var(--milk);padding:104px 0 96px;overflow:hidden}
+.cafe-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:72px;align-items:center}
+.cafe h2,.hrs h2{font:400 clamp(38px,4.6vw,60px)/1.02 var(--serif);letter-spacing:-.02em;margin:12px 0 22px}
+.cafe h2 q{quotes:"„" "“"}
+.cafe h2 i{font-style:italic}
+.cafe .kick,.hrs .kick{color:var(--ink-2)}
+.cafe p{color:var(--ink-2);max-width:31em}
+.facts{margin-top:30px;border-top:1px solid var(--line)}
+.facts li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.facts li span{font:700 11.5px/1.9 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.shop{position:relative;margin:0}
+.shop img{width:100%;aspect-ratio:390/340;object-fit:cover}
+.shop figcaption,.sweet figcaption{font:400 13px/1.5 var(--sans);color:var(--ink-2);margin-top:10px}
+.stain{position:absolute;pointer-events:none}
+.sweets{display:grid;grid-template-columns:260px minmax(0,360px) minmax(0,1fr);gap:48px;align-items:center;margin-top:96px;padding-top:44px;border-top:1px solid var(--line)}
+.sweet{margin:0}
+.sweet .round{width:240px;height:240px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 10px var(--paper),0 0 0 11px var(--line)}
+.sweet .round img,.sweet .wide img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.sweet .wide{overflow:hidden}
+.sweet .wide img{aspect-ratio:315/122}
+.sweet:hover img{transform:scale(1.045)}
+.sweets h3{font:400 italic 30px/1.15 var(--serif)}
+.sweets p{font-size:15px;color:var(--ink-2);margin-top:10px}
+
+/* hodiny + hodnotenie */
+.hrs{background:var(--foam);padding:100px 0}
+.hrs-grid{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:64px;align-items:center}
+.dial{width:460px;height:460px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 1px var(--line),inset 0 0 0 14px var(--paper),inset 0 0 0 15px var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px}
+.dial .kick{margin-bottom:14px}
+.days{width:100%;max-width:270px;font:400 16px/1 var(--sans);font-variant-numeric:tabular-nums lining-nums}
+.days li{display:flex;justify-content:space-between;padding:9px 6px;border-bottom:1px solid var(--line)}
+.days li:last-child{border-bottom:0}
+.days li[data-today]{background:var(--espresso);color:var(--milk);border-radius:999px;padding-left:14px;padding-right:14px;border-color:transparent;font-weight:700}
+.dial .src{font:400 12px/1.4 var(--sans);color:var(--ink-2);margin-top:14px}
+.score{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:center;margin-top:36px}
+.score-ring{position:relative;width:220px;height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.score-ring .stain{inset:0;width:100%;height:100%}
+.score-ring b{font:400 76px/1 var(--serif);position:relative}
+.score-ring span{font:700 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);position:relative;margin-top:6px}
+.score p{font-size:15.5px;color:var(--ink-2)}
+.score p b{color:var(--ink);font-weight:700}
+
+/* kontakt */
+.contact{background:var(--espresso);color:var(--milk);padding:96px 0 36px}
+.contact h2{font:400 clamp(44px,6vw,84px)/.95 var(--serif);letter-spacing:-.02em;margin:12px 0 48px}
+.contact h2 i{font-style:italic}
+.contact .kick{color:var(--crema-lt)}
+.c-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding-top:30px;border-top:1px solid var(--line-d)}
+.c-grid address{font-style:normal;font-size:19px;line-height:1.5;margin:12px 0 10px}
+.c-grid .big{display:inline-block;font:600 24px/1.3 var(--sans);font-variant-numeric:tabular-nums lining-nums;margin:4px 0 0;padding:8px 0;text-decoration:none}
+.c-grid .small{display:block;font-size:14px;color:var(--crema-lt)}
+.c-grid .lnk{display:inline-block;font:700 12px/20px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--crema-lt);padding:12px 0}
+.c-grid .pill{margin-top:16px}
+.stack{display:flex;flex-direction:column;align-items:flex-start}
+.foot{display:flex;justify-content:space-between;gap:16px;margin-top:80px;padding-top:20px;border-top:1px solid var(--line-d);font-size:13px;color:var(--crema-lt)}
+
+.mbar{display:none}
+@media (max-width:1020px){
+  .nav{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:36px;min-height:0}
+  .hero-copy{order:-1}
+  .coaster{max-width:520px;width:100%;margin:0 auto}
+  .cafe-grid,.hrs-grid{grid-template-columns:1fr}
+  .shop{max-width:480px}
+  .sweets{grid-template-columns:240px minmax(0,1fr)}
+  .sweets>div{grid-column:1/-1}
+  .c-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  :root{--pad:16px}
+  body{font-size:16px;padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+  .top .wrap{min-height:64px;gap:12px}
+  .top-tel{display:none}
+  .mark b{font-size:23px}
+  .mark small{display:none}
+  .top .pill{margin-left:auto;min-height:44px;padding:0 16px;font-size:14px}
+  .hero-grid{padding-top:36px;padding-bottom:44px}
+  .hero h1{font-size:clamp(58px,17vw,76px)}
+  .quote{font-size:21px}
+  .cta .pill{width:100%}
+  .menu{padding:56px 0 64px}
+  .mat{padding:34px 22px 26px;outline-offset:-9px}
+  .mat-head{grid-template-columns:1fr;gap:14px}
+  .grid3{grid-template-columns:1fr}
+  .cell,.cell+.cell{display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:18px;align-items:center;padding:20px 0;border-left:0}
+  .cell .ring{width:84px;height:84px;margin:0;grid-row:span 3}
+  .ring b{font-size:23px}
+  .cell h3{font-size:24px}
+  .cell p{margin-top:4px}
+  .cafe{padding:64px 0}
+  .cafe-grid{gap:40px}
+  .facts li{grid-template-columns:1fr;gap:2px}
+  .sweets{grid-template-columns:1fr;gap:28px;margin-top:64px}
+  .sweet .round{width:220px;height:220px;margin:0 auto 0 10px}
+  .hrs{padding:64px 0}
+  .hrs-grid{gap:40px}
+  .dial{width:min(358px,100%);height:auto;aspect-ratio:1;padding:28px}
+  .days{font-size:15px}
+  .days li{padding:7px 4px}
+  .score{grid-template-columns:150px minmax(0,1fr);gap:18px}
+  .score-ring{width:150px;height:150px}
+  .score-ring b{font-size:54px}
+  .contact{padding:64px 0 32px}
+  .c-grid{grid-template-columns:1fr;gap:30px}
+  .c-grid .pill{width:100%;min-height:52px}
+  .foot{flex-direction:column;margin-top:56px}
+  .mbar{display:grid;grid-template-columns:1fr 1.45fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:var(--espresso-2);border-top:1px solid var(--line-d)}
+  .mbar a{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:999px;font:700 15px var(--sans);text-decoration:none}
+  .mbar .call{border:1.5px solid var(--crema-lt);color:var(--milk)}
+  .mbar .book{background:var(--leaf);color:var(--espresso)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="wobble" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="10"/>
+    </filter>
+    <symbol id="ring-stain" viewBox="0 0 200 200">
+      <g filter="url(#wobble)">
+        <circle cx="100" cy="100" r="84" fill="#C8925B" fill-opacity=".07"/>
+        <circle cx="100" cy="100" r="84" fill="none" stroke="#B07940" stroke-opacity=".5" stroke-width="5"/>
+        <circle cx="101" cy="99" r="80" fill="none" stroke="#B07940" stroke-opacity=".22" stroke-width="2"/>
+        <path d="M30 128 A84 84 0 0 1 22 84" fill="none" stroke="#9A6634" stroke-opacity=".35" stroke-width="7" stroke-linecap="round"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="notice"><div class="wrap"><strong>Neoficiálny návrh</strong> — nie je to oficiálny web podniku · ukážka od Darwon · rezervácia vedie do ukážkovej administrácie, podnik ju nedostane</div></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#" aria-label="Coffee House — na začiatok"><b>Coffee <i>House</i></b><small>Topoľčany</small></a>
+    <nav class="nav" aria-label="Hlavná navigácia">
+      <a class="u" href="#ponuka">Ponuka</a>
+      <a class="u" href="#kaviaren">Kaviareň</a>
+      <a class="u" href="#hodiny">Hodiny</a>
+      <a class="u" href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="top-tel u tab" href="tel:+421915724155">0915 724 155</a>
+    <a class="pill" href="https://coffee-house-darwon.vercel.app/rezervacia">Rezervovať stôl</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <figure class="coaster">
+      <svg viewBox="0 0 640 640" role="img" aria-label="Pohľad zhora: šálka kávy na papierovej podložke s nápisom Coffee House po obvode">
+        <defs>
+          <radialGradient id="crema" cx="46%" cy="44%" r="58%">
+            <stop offset="0" stop-color="#7A4524"/><stop offset=".45" stop-color="#9C6334"/><stop offset=".8" stop-color="#C08A52"/><stop offset=".93" stop-color="#CF9D63"/><stop offset="1" stop-color="#7C4C2B"/>
+          </radialGradient>
+          <radialGradient id="sheen" cx="50%" cy="50%" r="50%">
+            <stop offset=".7" stop-color="#2A1912" stop-opacity=".16"/><stop offset="1" stop-color="#2A1912" stop-opacity="0"/>
+          </radialGradient>
+          <path id="rim" d="M320 72 a248 248 0 1 1 0 496 a248 248 0 1 1 0 -496"/>
+        </defs>
+        <circle cx="320" cy="320" r="304" fill="#FFFDF9"/>
+        <circle cx="320" cy="320" r="292" fill="none" stroke="#2A1912" stroke-opacity=".55" stroke-width="1"/>
+        <circle cx="320" cy="320" r="286" fill="none" stroke="#2A1912" stroke-opacity=".55" stroke-width="1" stroke-dasharray="1 5" stroke-linecap="round"/>
+        <text font-family="Mulish, system-ui, sans-serif" font-weight="700" font-size="17.5" fill="#2A1912" letter-spacing="5.2">
+          <textPath href="#rim" startOffset="6" textLength="1532" lengthAdjust="spacing">COFFEE HOUSE · PETRA JILEMNICKÉHO 97 · TOPOĽČANY · ŠIROKÝ VÝBER KÁV · PRÍJEMNÉ POSEDENIE ·</textPath>
+        </text>
+        <circle cx="320" cy="320" r="224" fill="none" stroke="#2A1912" stroke-opacity=".3" stroke-width="1"/>
+        <use href="#ring-stain" x="384" y="58" width="190" height="190" transform="rotate(14 479 153)"/>
+        <circle cx="328" cy="332" r="182" fill="url(#sheen)"/>
+        <circle cx="320" cy="320" r="176" fill="#FFFFFF" stroke="#2A1912" stroke-opacity=".14" stroke-width="1.5"/>
+        <circle cx="320" cy="320" r="128" fill="none" stroke="#2A1912" stroke-opacity=".08" stroke-width="10"/>
+        <g transform="rotate(-38 230 205)">
+          <rect x="196" y="201" width="78" height="8" rx="4" fill="#E7E2DA" stroke="#2A1912" stroke-opacity=".25"/>
+          <ellipse cx="184" cy="205" rx="17" ry="11" fill="#EFEAE3" stroke="#2A1912" stroke-opacity=".25"/>
+        </g>
+        <g transform="rotate(36 320 320)">
+          <rect x="414" y="304" width="66" height="32" rx="16" fill="#FFFFFF" stroke="#2A1912" stroke-opacity=".22" stroke-width="1.5"/>
+          <rect x="428" y="313" width="40" height="14" rx="7" fill="#2A1912" fill-opacity=".06"/>
+        </g>
+        <circle cx="326" cy="328" r="116" fill="#2A1912" fill-opacity=".12"/>
+        <circle cx="320" cy="320" r="112" fill="#FFFFFF" stroke="#2A1912" stroke-opacity=".2" stroke-width="1.5"/>
+        <circle cx="320" cy="320" r="97" fill="url(#crema)"/>
+        <circle cx="320" cy="320" r="97" fill="none" stroke="#FFFFFF" stroke-opacity=".9" stroke-width="2"/>
+        <path d="M252 262 A88 88 0 0 1 300 234" fill="none" stroke="#FFFFFF" stroke-opacity=".38" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </figure>
+    <div class="hero-copy">
+      <p class="kick">Kaviareň · Petra Jilemnického 97 · Topoľčany</p>
+      <h1 id="h1">Coffee <i>House</i></h1>
+      <p class="quote"><q>Pozývame všetkých milovníkov kávy, do príjemného prostredia našej kaviarne.</q></p>
+      <p class="status" aria-live="polite"><span id="statusDot"></span><span id="statusText">Po–Pi 8:00–19:00 · So–Ne 9:00–19:00</span><span id="todayLabel"></span></p>
+      <div class="cta">
+        <a class="pill" href="https://coffee-house-darwon.vercel.app/rezervacia">Rezervovať stôl</a>
+        <a class="tel u tab" href="tel:+421915724155">alebo zavolajte 0915 724 155</a>
+      </div>
+      <p class="note">Online rezervácia — vyberiete si deň a čas, potvrdenie príde e-mailom.</p>
+      <p class="trust"><span><b class="tab">4,6 ★</b> Google · 240 recenzií</span><span><b class="tab">100 %</b> odporúča na Facebooku · 15 hodnotení</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="ponuka" aria-labelledby="ponuka-h">
+  <div class="wrap">
+    <div class="mat">
+      <div class="mat-head">
+        <div>
+          <p class="kick">Lístok</p>
+          <h2 id="ponuka-h">Ponuka <i>na podložke</i></h2>
+        </div>
+        <p>Matcha ponuku sme prepísali z plagátu na Facebooku kaviarne. Druhý rad je ukážka — celý lístok s cenami doplníme podľa vašej ponuky.</p>
+      </div>
+      <p class="row-label"><span>Z plagátu „Matcha ponuka“ na Facebooku</span><em>ceny overiť</em></p>
+      <ul class="grid3">
+        <li class="cell"><span class="ring"><b>3,90</b><span>EUR</span></span><h3>Matcha <i>latte</i></h3></li>
+        <li class="cell"><span class="ring"><b>4,30</b><span>EUR</span></span><h3>Matcha latte <i>ochutené</i></h3></li>
+        <li class="cell"><span class="ring"><b>4,10</b><span>EUR</span></span><h3>Matcha <i>tonic</i></h3></li>
+      </ul>
+      <p class="row-label"><span>Ukážka návrhu — ceny doplní kaviareň</span><span class="mock-tag">Ukážka</span></p>
+      <ul class="grid3">
+        <li class="cell mock"><span class="ring"><b>—</b><span>EUR</span></span><h3><i>Káva</i></h3><p><q>Široký výber káv</q> — nápis na výklade kaviarne.</p></li>
+        <li class="cell mock"><span class="ring"><b>—</b><span>EUR</span></span><h3>Torty <i>a zákusky</i></h3><p>Napríklad pistáciové tiramisu z príspevku kaviarne na Facebooku.</p></li>
+        <li class="cell mock"><span class="ring"><b>—</b><span>EUR</span></span><h3>Take <i>away</i></h3><p>Káva so sebou; Facebook uvádza aj vyzdvihnutie pri obrubníku.</p></li>
+      </ul>
+      <div class="mat-foot">
+        <span>Na kávu s priateľmi? Stôl si rezervujete online — vyberiete si deň a čas.</span>
+        <a class="pill pill-dark" href="https://coffee-house-darwon.vercel.app/rezervacia">Rezervovať stôl</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cafe" id="kaviaren" aria-labelledby="kaviaren-h">
+  <div class="wrap">
+    <div class="cafe-grid">
+      <div>
+        <p class="kick">Kaviareň</p>
+        <h2 id="kaviaren-h"><q>Široký výber káv. <i>Príjemné posedenie.</i></q></h2>
+        <p>Tak to stojí na výklade kaviarne na Petra Jilemnického. Pred vchodom je terasa so stolíkmi, kávu si môžete dať na mieste aj so sebou.</p>
+        <ul class="facts">
+          <li><span>Na mieste</span>vnútri aj na terase pred kaviarňou</li>
+          <li><span>So sebou</span>take away · vyzdvihnutie pri obrubníku (podľa Facebooku)</li>
+          <li><span>Cenová hladina</span>$ — nízka (podľa Facebooku)</li>
+        </ul>
+      </div>
+      <figure class="shop">
+        <img src="assets/coffee-house-terasa.webp" width="390" height="340" loading="lazy" alt="Terasa s ratanovými stoličkami pred kaviarňou Coffee House, na výklade nápisy Široký výber káv, Príjemné posedenie a Take away">
+        <figcaption>Terasa pred kaviarňou · Petra Jilemnického 97</figcaption>
+      </figure>
+    </div>
+    <div class="sweets">
+      <figure class="sweet"><div class="round"><img src="assets/coffee-house-torta.webp" width="315" height="190" loading="lazy" alt="Torta s čokoládovou polevou a ozdobami na podnose"></div></figure>
+      <figure class="sweet"><div class="wide"><img src="assets/coffee-house-tiramisu.webp" width="315" height="122" loading="lazy" alt="Pistáciové tiramisu v pohárikoch na striebornom podnose"></div><figcaption>Pistáciové tiramisu · z príspevku kaviarne na Facebooku</figcaption></figure>
+      <div>
+        <h3>K&nbsp;káve aj niečo sladké</h3>
+        <p>Torty a tiramisu z fotiek kaviarne — aktuálne zákusky sa sem dajú dopĺňať priebežne.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hrs" id="hodiny" aria-labelledby="hodiny-h">
+  <div class="wrap hrs-grid">
+    <div>
+      <p class="kick">Hodiny a hodnotenie</p>
+      <h2 id="hodiny-h">Každý deň <i>do siedmej</i></h2>
+      <p style="color:var(--ink-2);max-width:30em">Cez týždeň od ôsmej, cez víkend od deviatej. Dnešný deň je na podložke zvýraznený.</p>
+      <div class="score">
+        <div class="score-ring"><svg class="stain" viewBox="0 0 200 200" aria-hidden="true"><use href="#ring-stain"/></svg><b class="tab">4,6</b><span>★ Google</span></div>
+        <p><b>240 recenzií</b> na Googli a <b>100 %</b> odporúčaní na Facebooku (15 hodnotení).</p>
+      </div>
+    </div>
+    <div class="dial">
+      <p class="kick">Otváracie hodiny</p>
+      <ul class="days">
+        <li data-day="1"><span>Pondelok</span><span>8:00–19:00</span></li>
+        <li data-day="2"><span>Utorok</span><span>8:00–19:00</span></li>
+        <li data-day="3"><span>Streda</span><span>8:00–19:00</span></li>
+        <li data-day="4"><span>Štvrtok</span><span>8:00–19:00</span></li>
+        <li data-day="5"><span>Piatok</span><span>8:00–19:00</span></li>
+        <li data-day="6"><span>Sobota</span><span>9:00–19:00</span></li>
+        <li data-day="0"><span>Nedeľa</span><span>9:00–19:00</span></li>
+      </ul>
+      <p class="src">podľa Google, 9. 10. 2026</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt" aria-labelledby="kontakt-h">
+  <div class="wrap">
+    <p class="kick">Kontakt</p>
+    <h2 id="kontakt-h">Príďte na <i>kávu</i></h2>
+    <div class="c-grid">
+      <div class="stack">
+        <p class="kick">Adresa</p>
+        <address>Petra Jilemnického 97<br>955 01 Topoľčany</address>
+        <a class="lnk u" href="https://www.google.com/maps/search/Coffee+House+Jilemnick%C3%A9ho+Topo%C4%BE%C4%8Dany" rel="noopener">Otvoriť v Google Maps</a>
+      </div>
+      <div class="stack">
+        <p class="kick">Telefón</p>
+        <a class="big u" href="tel:+421915724155">+421 915 724 155</a>
+        <span class="small">číslo z Facebooku kaviarne</span>
+        <a class="lnk u" href="https://www.facebook.com/profile.php?id=100057189711226" rel="noopener">Facebook</a>
+      </div>
+      <div class="stack">
+        <p class="kick">Rezervácia</p>
+        <p style="margin-top:12px;max-width:20em">Stôl si rezervujete online — vyberiete si deň a čas, potvrdenie príde e-mailom.</p>
+        <a class="pill" href="https://coffee-house-darwon.vercel.app/rezervacia">Rezervovať stôl</a>
+      </div>
+    </div>
+    <footer class="foot">
+      <span>Coffee House · Petra Jilemnického 97 · Topoľčany</span>
+      <span>Neoficiálny návrh webu · Darwon · 2026</span>
+    </footer>
+  </div>
+</section>
+</main>
+
+<nav class="mbar" aria-label="Rýchle akcie">
+  <a class="call" href="tel:+421915724155">Zavolať</a>
+  <a class="book" href="https://coffee-house-darwon.vercel.app/rezervacia">Rezervovať stôl</a>
+</nav>
+
+<script>
+/* Živý stav (Europe/Bratislava), hodiny podľa Google 9. 10. 2026 */
+(function(){
+  "use strict";
+  var HOURS = {0:[[540,1140]],1:[[480,1140]],2:[[480,1140]],3:[[480,1140]],4:[[480,1140]],5:[[480,1140]],6:[[540,1140]]}; /* Google 9. 10. 2026 */
+  var NOTES = {};
+  var W = {open:"Teraz otvorené", closing:"Zatvárame o", closed:"Zatvorené", next:"otvárame"};
+
+  var ACC = ["v nedeľu","v pondelok","v utorok","v stredu","vo štvrtok","v piatok","v sobotu"];
+  function now(){
+    try{
+      var p = new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Bratislava",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());
+      var m = {}; p.forEach(function(x){ m[x.type] = x.value; });
+      return { day:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[m.weekday], mins:(parseInt(m.hour,10)%24)*60 + parseInt(m.minute,10) };
+    }catch(err){ var d = new Date(); return { day:d.getDay(), mins:d.getHours()*60 + d.getMinutes() }; }
+  }
+  function hm(t){ if(t >= 1440) return "polnoci"; var h = Math.floor(t/60), m = t%60; return h + ":" + (m<10?"0":"") + m; }
+  function status(n){
+    var spans = HOURS[n.day] || [], prev = HOURS[(n.day+6)%7] || [];
+    for(var j=0;j<prev.length;j++){ if(prev[j][1] > 1440 && n.mins < prev[j][1]-1440) return {open:true, end:prev[j][1]-1440}; }
+    for(var i=0;i<spans.length;i++){ if(n.mins >= spans[i][0] && n.mins < spans[i][1]) return {open:true, end:spans[i][1]}; }
+    for(var k=0;k<spans.length;k++){ if(spans[k][0] > n.mins) return {open:false, when:"dnes o " + hm(spans[k][0])}; }
+    for(var d=1; d<=7; d++){ var dd = (n.day+d)%7, s = HOURS[dd]; if(s && s.length) return {open:false, when:(d===1 ? "zajtra" : ACC[dd]) + " o " + hm(s[0][0])}; }
+    return {open:false, when:""};
+  }
+  function render(){
+    var n = now(), dot = document.getElementById("statusDot"), text = document.getElementById("statusText");
+    if(HOURS && dot && text){
+      var st = status(n);
+      if(st.open){
+        var left = st.end - n.mins;
+        if(left <= 60){ dot.className = "is-closing"; text.innerHTML = W.closing + " " + hm(st.end) + " · <b>ešte " + left + " min</b>"; }
+        else { dot.className = "is-open"; text.innerHTML = W.open + " · <b>do " + hm(st.end) + "</b>"; }
+      }else{
+        var note = NOTES[n.day], noted = note && !(HOURS[n.day]||[]).length;
+        dot.className = noted ? "is-note" : "is-closed";
+        text.innerHTML = noted ? "Dnes " + note : W.closed + (st.when ? " · <b>" + W.next + " " + st.when + "</b>" : "");
+      }
+    }
+    var label = document.getElementById("todayLabel");
+    if(HOURS && label && !label.textContent){
+      var s = HOURS[n.day] || [];
+      if(s.length) label.textContent = "Dnes " + s.map(function(x){ return hm(x[0]) + "–" + (x[1] >= 1440 ? "0:00" : hm(x[1])); }).join(", ");
+      else if(!NOTES[n.day]) label.textContent = "Dnes zatvorené";
+    }
+    [].forEach.call(document.querySelectorAll('[data-day="' + n.day + '"]'), function(r){ r.setAttribute("data-today",""); });
+  }
+  render(); setInterval(render, 60000);
+
+  var tabs = [].slice.call(document.querySelectorAll("[data-dow][aria-controls]"));
+  if(tabs.length){
+    var n = now(), pick = null;
+    tabs.forEach(function(t){ if(+t.getAttribute("data-dow") === n.day) pick = t; });
+    if(!pick) pick = (n.day === 0 || n.day === 6) ? tabs[tabs.length-1] : tabs[0];
+    function select(t){
+      tabs.forEach(function(x){ var on = x === t; x.setAttribute("aria-selected", on ? "true" : "false");
+        var p = document.getElementById(x.getAttribute("aria-controls")); if(p) p.hidden = !on; });
+    }
+    tabs.forEach(function(t){ t.addEventListener("click", function(){ select(t); }); });
+    select(pick);
+    var td = document.getElementById("todayDish");
+    if(td && +pick.getAttribute("data-dow") === n.day){
+      var first = document.querySelector("#" + pick.getAttribute("aria-controls") + " .dish-name");
+      if(first) td.textContent = first.firstChild.textContent.trim();
+    }
+  }
+})();
+</script>
+</html>
